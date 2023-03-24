@@ -16,9 +16,10 @@ class wikispider(scrapy.Spider):
     def parse(self, response):
         page = response.url.split("/")[-3]
         filename = f"{page}.txt"
-        os.remove(r"C:\Users\mrdas\scrapy\tutorial\tutorial\spiders\en.wikipedia.org.txt")
+        if os.path.exists(fr"c:\users\mrdas\scrapy\data\{filename}"):
+            os.remove(fr"C:\Users\mrdas\scrapy\data\{filename}")
         for para in response.xpath("//div[@class='mw-parser-output']/p"):
             text = para.xpath("string(.)").getall()
-            with open(filename, "a", encoding="utf-8") as f:
+            with open(fr"c:\users\mrdas\scrapy\data\{filename}", "a", encoding="utf-8") as f:
                 f.write(text[0].strip())
         self.log(f"Saved file: {filename}")
