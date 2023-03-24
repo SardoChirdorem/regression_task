@@ -18,7 +18,7 @@ class wikispider(scrapy.Spider):
         filename = f"{page}.txt"
         os.remove(r"C:\Users\mrdas\scrapy\tutorial\tutorial\spiders\en.wikipedia.org.txt")
         for para in response.xpath("//div[@class='mw-parser-output']/p"):
-            text = para.xpath("text()").getall()
+            text = para.xpath("string(.)").getall()
             with open(filename, "a", encoding="utf-8") as f:
-                f.write(str(text) + "\n")
+                f.write(text[0].strip())
         self.log(f"Saved file: {filename}")
