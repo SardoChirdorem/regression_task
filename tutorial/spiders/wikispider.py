@@ -22,17 +22,3 @@ class wikispider(scrapy.Spider):
             with open(filename, "a", encoding="utf-8") as f:
                 f.write(text[0].strip())
         self.log(f"Saved file: {filename}")
-
-
-low eweqhvcjhbc
-.v,q;ekjrbvwd
-b'ebnwedv, asdv
-ca'dvl1q'
-ebfr1
-d'b
-1w,b SDf',b s
-f' ,gsf
-'g n
-1a'gn
-1tn'l
-1rw'blR:b ,fg '.sf gmlwl'f ngwf;g '
